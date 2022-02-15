@@ -1,0 +1,38 @@
+<!-- Sidebar Header starts -->
+<div class="sidebar-header" *ngIf="config?.layout.menuPosition === 'Side'">
+  <div class="logo clearfix">
+    <a [routerLink]="['/home']" class="logo-text float-left text-center">
+      <div class="logo-img">
+        <img [src]="logoUrl" height="40px" />
+      </div>
+      <!-- <img [src]="logoUrlEnd" class="text logo-img-two" height="40px" /> -->
+      <!--  <span class="text align-middle">Plany</span>-->
+    </a>
+    <!--<a class="nav-toggle d-none d-lg-none d-xl-block" id="sidebarToggle" href="javascript:;" (click)="toggleSidebar()">
+      <i #toggleIsidebarGroupActivecon [ngClass]="{
+        'ft-toggle-left': config.layout.sidebar.collapsed,
+        'ft-toggle-right': !config.layout.sidebar.collapsed
+      }" class="toggle-icon"></i>
+      </a>
+      <a class="nav-close d-block d-lg-block d-xl-none" id="sidebarClose" href="javascript:;" (click)="CloseSidebar()">
+      <i class="ft-x"></i>
+      </a>-->
+  </div>
+</div>
+<!-- Sidebar Header Ends -->
+<!-- Sidebar Content starts -->
+<div class="sidebar-content main-menu-content d-flex align-items-start flex-column" [perfectScrollbar]
+[disabled]="!perfectScrollbarEnable">
+<div class="nav-container w-100 mb-auto">
+  <ul class="navigation" appSidebarDropdown>
+    <!-- First level menu -->
+    <li appSidebarlink [routerLink]="['/home']" level="1" [hasSub]="false" routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: false }">
+    <a appSidebarAnchorToggle (click)="toggleSidebar(true)">
+    <i class="ft-home"></i>
+    </a>
+    </li>        
+  </ul>
+</div>
+</div>
+<!-- Sidebar Content Ends -->

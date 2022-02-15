@@ -1,0 +1,16 @@
+
+/*@font-face {
+    font-family: "plany";
+    src: url('../plany-fonts/Prota\ Standard\ Font.ttf'); /* IE9*
+  }*/
+
+  /*@font-face {
+    font-family: "plany";
+    src: url('../plany-fonts/Roboto-Regular.ttf'); /* IE9*
+  }*/
+
+  
+  @font-face {
+    font-family: "SFNS";
+    src: local("SFNS"), url('../plany-fonts/SFNS\ Display\ Regular.ttf'); /* IE9*/
+  }

@@ -1,0 +1,136 @@
+// Global Overrides Template Level Only
+
+
+//------- ng-accordion -------
+.accordion {
+  .card {
+    margin: 0;
+    background-color: transparent !important;
+    box-shadow: none;
+    //border-top: 1px solid $border-color;
+    border-radius: 0;
+    /*&:last-of-type {
+      .card-header button {
+        padding-bottom: 0;
+      }
+
+      .card-body {
+        padding-bottom: 0;
+      }
+    }*/
+
+    .card-header {
+      border-bottom: 1px solid $border-color;
+      padding: 15px;
+      padding-left: 0px;
+      padding-bottom: 0px;
+
+      button {
+        padding-bottom: 5px;
+        padding-left: 15px;
+        width: 100%;
+        text-align: start;
+        color:  var(--custom-black);
+
+        &:hover {
+          box-shadow: none;
+        }
+      }
+
+      button:before{
+        content: "\e844";
+        font-family: "feather";
+        font-size: 1.1rem;
+        display: inline-block;
+        position: absolute;
+        left: 0px;
+        top: 22px;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+      button.collapsed:before
+      {
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0);
+        transition: all 200ms linear;        
+      }
+
+
+      
+
+
+
+
+      button.open:before{
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+//------- horizontal timeline -------
+.cd-horizontal-timeline .events-content li {
+  transform: translateX(0);
+}
+
+//------- time picker -------
+.ngb-tp-input-container button:hover {
+  box-shadow: none;
+}
+
+//------- Chartist Tooltip -------
+.chartist-tooltip:not(.tooltip-show) {
+  padding: 0;
+
+  &:before {
+    border: 0;
+  }
+}
+
+
+// for dark and transparent layouts
+html body.layout-dark {
+
+  // Navbar search
+  .search-list {
+    background: $bg-color-dark;
+
+    .first-active-item .option {
+      background: $dl-bg-color;
+    }
+
+    .option {
+      color: $dl-text-color;
+
+      &:hover {
+        background: $dl-bg-color;
+      }
+    }
+
+    .accordion .card {
+      box-shadow: none;
+    }
+
+    &:not(.layout-transparent) {
+      .accordion .card .card-header {
+        border-color: $dl-border-color;
+      }
+    }
+
+    &.layout-transparent {
+      .accordion .card .card-header {
+        border-color: $tl-border-color;
+
+        button:not([disabled]) {
+          color: map-get($primary-color, lighten-4);
+        }
+      }
+    }
+  }
+}

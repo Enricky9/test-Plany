@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plany | Gestão Estratégica</title>
+  <base href="/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/fonts/feather/style.min.css" rel="stylesheet">
+  <link href="assets/fonts/simple-line-icons/style.css" rel="stylesheet">
+  <link href="assets/fonts/plany-fonts/style.css" rel="stylesheet">
+  <link href="assets/fonts/weathericons/css/weather-icons.css" rel="stylesheet">
+  <link href="assets/fonts/weathericons/css/weather-icons-wind.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900|Montserrat:300,400,500,600,700,800,900'
+    rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="assets/vendor/pace/themes/black/pace-theme-flash.css" />
+  <style type="text/css">
+    .pace .pace-activity {
+      top: 19px;
+      right: 19px;
+      display: none;
+    }
+
+    .page-loading {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      overflow: hidden;
+      background: rgb(255, 255, 255);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      z-index: -1;
+    }
+
+    .loading-icon {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    app-root:empty~.page-loading {
+      opacity: 1;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body style="background-color: #ffffff;">
+  <app-root></app-root>
+  <div class="page-loading">
+    <img src="assets/img/logo.gif" class="loading-icon" />
+  </div>
+  <script>
+      function initFreshChat() {
+      prefiled = false;
+      window.fcWidget.init({
+        token: "8d920a15-267a-46a4-ad0d-ef1ff57d102c",
+        host: "https://wchat.freshchat.com",
+      });
+      showChat();
+      window.fcWidget.on("widget:opened", function () {
+        if (!prefiled) {
+          showChat();
+          prefiled = true;
+        }
+      });
+      window.fcWidget.on("widget:closed", function (resp) {
+        this.destroyChat();
+      });
+    }
+
+        function initFreshChatInCategories() {
+          prefiled = false;
+          window.fcWidget.init({
+            token: "8d920a15-267a-46a4-ad0d-ef1ff57d102c",
+            host: "https://wchat.freshchat.com",
+            config: {
+              showFAQOnOpen: true,
+              hideFAQ: false,
+            }
+          });
+          window.fcWidget.on("widget:closed", function (resp) {
+            this.destroyChat();
+          });
+
+          if (window.fcWidget.isOpen() != true) {
+            window.fcWidget.open();
+            //Or do something else :)
+          }
+        }
+
+    function showChat() {
+      if (window.fcWidget.isOpen() != true) {
+        window.fcWidget.open({ name: 'Fale conosco' });
+        //Or do something else :)
+      }
+    }            
+    function destroyChat() {
+      if (window.fcWidget)
+        window.fcWidget.destroy();
+    }
+          function initiateCallChat() {
+            initialize(document, "freshchat-js-sdk")
+          }
+          function initiateCallCategories() {
+            initializeCategories(document, "freshchat-js-sdk")
+    }
+    function initialize(i, t) { var e; i.getElementById(t) ? initFreshChat() : ((e = i.createElement("script")).id = t, e.async = !0, e.src = "https://wchat.freshchat.com/js/widget.js", e.onload = initFreshChat, i.head.appendChild(e)) }
+                    function initializeCategories(i, t) { var e; i.getElementById(t) ? initFreshChatInCategories() : ((e = i.createElement("script")).id = t, e.async = !0, e.src = "https://wchat.freshchat.com/js/widget.js", e.onload = initFreshChatInCategories, i.head.appendChild(e)) }
+    //window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load", initiateCall, !1);
+  </script>
+</body>
+
+</html>

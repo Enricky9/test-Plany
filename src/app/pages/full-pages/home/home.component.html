@@ -1,0 +1,66 @@
+<div class="d-flex flex-column overflow-hidden kanban">
+  <div class="navbar-header d-flex w-100">
+    <span class="content-header" >Página Inicial</span>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Nome</th>
+    <th scope="col">Data de Nascimento</th>
+    <th scope="col">Email</th>
+    <th scope="col">Ações</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of itens">
+    <td>{{item.name}}</td>
+    <td>{{item.birthDate | date : 'dd/MM/yyyy'}}</td>
+    <td>{{item.email}}</td>
+    <td>
+      <button (click)="customerEdit = item; setValue(item)" type="button" class="btn btn-warning">Editar</button>
+      <br>
+      <button (click)="excluirCustomer(item.id)" type="button" class="btn btn-danger">Excluir</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+  <form [formGroup]="form" (ngSubmit)="submit()" *ngIf="customerEdit">
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        formControlName="name"
+        id="name"
+        type="text"
+        class="form-control">
+
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        formControlName="email"
+        id="email"
+        type="text"
+        class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="birthDate">birthDate</label>
+      <textarea
+        formControlName="birthDate"
+        id="birthDate"
+        type="text"
+        class="form-control">
+        </textarea>
+    </div>
+
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+
+

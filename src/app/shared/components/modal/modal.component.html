@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <h4 class="modal-title">
+        {{title}}
+    </h4>
+    <i class="close ft-x cursor-pointer" (click)="activeModal.close('Cancel')"></i>
+</div>
+<div class="modal-body">
+    <p *ngIf="name != ''"><b>{{name}}</b></p>
+    <span>{{message}}</span>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="activeModal.close('Cancel')">Não</button>    
+    <button [disabled]="isLoading" [ngClass]="{'disabled': isLoading}" type="button" class="btn btn-info" (click)="ok()">
+        <i class="fa fa-spin white fa-spinner font-medium-5 icone-login mr-2" *ngIf="isLoading"></i>Sim</button>
+</div>

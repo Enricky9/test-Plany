@@ -1,0 +1,13 @@
+:root {
+  --custom-yellow: #FFB946;
+  --custom-red: #F7685B;
+  --custom-green: #2ED47A;
+  --custom-darkgrey: #616161;
+  --custom-mediumgrey: #9E9E9E;
+  --custom-lightgrey: #F5F5F5;
+  --custom-blue: #2196f3;
+  --custom-lightblue: rgb(209, 236, 255);
+  --custom-black: #101820;
+  --smart-scheduler-event-button-size: 0px !important;
+}
+
