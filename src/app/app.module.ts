@@ -33,7 +33,7 @@ import * as moment from "moment";
 import { JsonDateInterceptor } from "./core/interceptors/jsonDate.interceptor";
 import { QuillModule } from "ngx-quill";
 import { RouteReuseStrategy } from "@angular/router";
-import { CustomRouteReuseStrategy } from "./shared/routes/arouteReuseStrategy";
+import { CustomRouteReuseStrategy } from "./shared/routes/aRouteReuseStrategy";
 
 defineLocale('pt-br', ptBrLocale);
 registerLocaleData(ptBr);
